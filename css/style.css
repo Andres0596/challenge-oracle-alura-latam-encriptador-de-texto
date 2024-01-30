@@ -1,0 +1,426 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(1fr, 6);
+  grid-template-areas:
+    "header header header header header header"
+    "relleno entrada entrada salida salida relleno2"
+    "relleno restricciones . . . relleno2"
+    "relleno boton-en boton-des copiar copiar relleno2"
+    "footer footer footer footer footer footer";
+  width: 100%;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(
+    266deg,
+    #009dff 0%,
+    #0082d1 35%,
+    #005285 100%
+  );
+  padding: 0.5rem 5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.contenedor-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 90px;
+  margin-right: 1rem;
+}
+
+.img-logo {
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 1.5rem 0;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Rowdies", sans-serif;
+}
+
+/* Estilos del relleno para la grid */
+.relleno {
+  grid-area: relleno;
+  width: 5vw;
+}
+
+/* Estilos del contenedor del textarea */
+.entrada {
+  display: flex;
+  justify-content: flex-start;
+  grid-area: entrada;
+  width: 100%;
+}
+
+textarea {
+  width: 90%;
+  height: 100%;
+  resize: none;
+  font-size: 2rem;
+  border: none;
+  color: #0082d1;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px #3e3e3e;
+}
+
+textarea::placeholder {
+  color: #0082d1;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+/* Estilos del contenedor de salida de texto */
+.salida {
+  grid-area: salida;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  color: #0082d1;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px #3e3e3e;
+}
+
+.salida p {
+  max-width: 100%;
+  margin: 0;
+}
+
+.contenedor-imagen-salida {
+  width: 90%;
+  max-width: 350px;
+  min-width: 350px;
+}
+
+.imagen-salida {
+  width: 100%;
+  height: auto;
+}
+
+/* Estilos del segundo relleno para la grid */
+.relleno2 {
+  grid-area: relleno2;
+  width: 5vw;
+}
+
+/* Estilos para el texto que indica los valores de texto permitidos */
+.restricciones {
+  grid-area: restricciones;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  color: gray;
+  font-size: 0.9rem;
+}
+
+.caja-boton {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.botones-estilo {
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  width: 20vw;
+  border: none;
+  transition: 100ms;
+  background-color: #fff;
+  color: #0082d1;
+  border: 1px solid;
+  border-color: #0082d1;
+  transition: 100ms;
+}
+
+.botones-estilo:hover {
+  background-color: #e7e7e7;
+  cursor: pointer;
+}
+
+.botones-estilo:active {
+  transform: scale(1.05);
+  box-shadow: 1px 1px 5px #3e3e3e;
+  background-color: #e7e7e7;
+}
+
+/* Estilos contenedor del boton encriptar */
+.boton-en {
+  grid-area: boton-en;
+  display: flex;
+  align-items: center;
+  height: 150px;
+}
+
+.boton-encriptar {
+  background-image: linear-gradient(
+    266deg,
+    #009dff 0%,
+    #0082d1 35%,
+    #005285 100%
+  );
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.boton-encriptar:hover {
+  background-color: #006ac1;
+  color: #fff;
+}
+
+.boton-encriptar:active {
+  background-color: #006ac1;
+  color: #fff;
+  border: none;
+}
+
+/* Estilos del contenedor del boton desencriptar */
+.boton-des {
+  grid-area: boton-des;
+  display: flex;
+  align-items: center;
+  height: 150px;
+}
+
+/* Estilos del boton copiar */
+.copiar {
+  grid-area: copiar;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  grid-area: footer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    266deg,
+    rgba(0, 157, 255, 1) 0%,
+    hsl(203, 100%, 50%) 35%,
+    #005285 100%
+  );
+  margin-top: 3rem;
+  padding: 1.5rem;
+}
+
+.footer p {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin: 0 0 5px 0;
+  text-align: center;
+}
+
+/* Estilos del contenedor de los iconos de redes sociales */
+.redes {
+  display: inherit;
+  justify-content: space-evenly;
+  width: 8vw;
+}
+
+.redes img {
+  width: 35px;
+}
+
+.redes img:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "header header header header header"
+      ". entrada entrada entrada ."
+      ". restricciones . . ."
+      ". boton-en . boton-des ."
+      ". salida salida salida ."
+      ". copiar copiar copiar ."
+      "footer footer footer footer footer";
+    overflow-x: hidden;
+  }
+
+  header {
+    padding: 0;
+    justify-content: center;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+  .contenedor-salida {
+    padding-bottom: 1.5rem;
+  }
+
+  .salida {
+    max-width: none;
+  }
+
+  .imagen-salida {
+    display: none;
+  }
+
+  .caja-boton {
+    justify-content: center;
+  }
+
+  .botones {
+    justify-content: space-evenly;
+  }
+
+  .botones-estilo {
+    width: 40vw;
+  }
+
+  .relleno,
+  .relleno2 {
+    display: none;
+  }
+}
+
+/* Estilos para las restricciones en caso de error */
+.error {
+  animation: vibracion 0.5s ease-in-out, cambioColor 0.5s ease-in-out;
+}
+
+@keyframes vibracion {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25%,
+  75% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes cambioColor {
+  0%,
+  100% {
+    color: #006ac1;
+  }
+  50% {
+    color: #005285;
+  }
+}
+
+@media screen and (max-width: 542px) {
+  .contenedor-logo {
+    margin: 0;
+  }
+  .salida {
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 681px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-areas:
+      "header header header header"
+      ". entrada entrada ."
+      ". restricciones restricciones ."
+      ". boton-en boton-en ."
+      ". boton-des boton-des ."
+      ". salida salida ."
+      ". copiar copiar ."
+      "footer footer footer footer";
+    overflow-x: hidden;
+  }
+
+  header {
+    padding: 0;
+    justify-content: center;
+  }
+
+  .entrada {
+    margin-bottom: 2rem;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+  .salida {
+    margin: 2rem 0;
+    max-width: none;
+  }
+
+  .contenedor-salida {
+    padding-bottom: 1.5rem;
+    margin: 3rem 0;
+  }
+
+  .imagen-salida {
+    display: none;
+  }
+  .restricciones {
+    margin-bottom: 2.5rem;
+  }
+  .caja-boton {
+    justify-content: center;
+  }
+
+  .botones {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .botones-estilo {
+    width: 50vw;
+  }
+
+  .boton-en,
+  .boton-des,
+  .copiar {
+    height: 70px;
+  }
+
+  .relleno,
+  .relleno2 {
+    display: none;
+  }
+}

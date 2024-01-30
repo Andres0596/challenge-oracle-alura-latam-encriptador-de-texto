@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encriptador de Texto</title>
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/icono/logo.ico" type="image/x-icon">
+    <!-- Icono movil -->
+    <link rel="apple-touch-icon" href="img/icono/logo.ico">
+    <!-- Fuentes externas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rowdies:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Cabecera -->
+    <header id="header" class="header">
+      <div class="contenedor-logo">
+        <img class="img-logo" src="img/logo.svg" alt="Logo Encriptador de Texto" />
+      </div>
+      <h1>ENCRIPTADOR DE TEXTO</h1>
+    </header>
+
+    <!-- Entrada de texto -->
+    <article class="entrada">
+      <textarea
+        name="textarea"
+        id="texto-usuario"
+        cols="30"
+        rows="10"
+        autofocus
+        placeholder="Ingresa aquí tu texto..."
+      ></textarea>
+    </article>
+
+    <!-- Salida de texto -->
+    <aside id="salida" class="salida">
+      <p id="sin-mensaje" class="sin-mensaje">Ningún mensaje fue encontrado</p>
+      <div class="contenedor-imagen-salida">
+        <img
+          src="img/Imagen-no-salida.svg"
+          id="imagen-salida"
+          class="imagen-salida"
+          alt="Personas interactuando con un teclado"
+        />
+      </div>
+    </aside>
+
+    <!-- Info. Restricciones -->
+    <p id="restricciones" class="restricciones">&#x24D8 Solo letras minúsculas y sin acentos</p>
+
+    <!-- Botones -->
+    <div class="caja-boton boton-en">
+      <button class="botones-estilo boton-encriptar" onclick="encriptar();">Encriptar</button>
+    </div>
+    <div class="caja-boton boton-des">
+      <button class="botones-estilo" onclick="desencriptar();">Desencriptar</button>
+    </div>
+    <div class="copiar">
+      <button id="copiar" class="botones-estilo" onclick="copiarTexto();">Copiar</button>
+    </div>
+
+    <!-- Pie de pagina -->
+    <footer class="footer">
+      <p>&copy Copyright 2024 | By Andrés Mónico</p>
+      <div class="redes">
+        <a
+          href="https://www.linkedin.com/in/jairo-andr%C3%A9s-m%C3%B3nico-castellanos-17b4272a5/"
+          target="_blank"
+        >
+          <img src="img/redes/linkedin-blanco.svg" alt="icono-linkedin" />
+        </a>
+        <a href="https://github.com/Andres0596" target="_blank">
+          <img src="img/redes/github-blanco.svg" alt="icono-github">
+        </a>
+        <a href="https://twitter.com/AndresMC569" target="_blank"><img src="img/redes/x-twitter-blanco.svg" alt="icono-x-twitter"></a>
+      </div>
+    </footer>
+
+    <!-- Rellenos para la grid -->
+    <div class="relleno"></div>
+    <div class="relleno2"></div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
